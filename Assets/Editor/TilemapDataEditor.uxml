@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column;">
+        <ui:Label tabindex="-1" display-tooltip-when-elided="true" style="flex-grow: 0;" />
+        <ui:BindableElement binding-path="m_Tilemap">
+            <uie:PropertyField binding-path="origin" />
+        </ui:BindableElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/TilemapEditor.uss?fileID=7433441132597879392&amp;guid=2fce70fd5adf0964a9eb6a758e0ef6f8&amp;type=3#TilemapEditor" />
+    <ui:Button text="Button" display-tooltip-when-elided="true" />
+</ui:UXML>

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+        <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); max-width: 32px; max-height: 32px; min-width: 32px; min-height: 32px;" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); margin-left: 4px;">
+            <ui:Label tabindex="-1" text="Material" display-tooltip-when-elided="true" binding-path="m_Material.Name" name="Name" style="margin-left: 4px;" />
+            <ui:Slider picking-mode="Ignore" label="Amount" value="1" high-value="100" show-input-field="true" low-value="0" name="Amount" binding-path="m_MaterialAmount" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

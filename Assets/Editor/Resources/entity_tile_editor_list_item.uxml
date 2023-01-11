@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="Container" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+        <ui:VisualElement name="PreviewIcon" style="max-width: 32px; max-height: 32px; min-width: 32px; min-height: 32px; background-image: url(&apos;project://database/Assets/Sprites/UnknownIcon.png?fileID=21300000&amp;guid=55fb17fb52faa3d44aedec2e3422983a&amp;type=3#UnknownIcon&apos;);" />
+        <ui:VisualElement name="Content" style="flex-grow: 1; margin-left: 4px; align-self: center;">
+            <ui:Label tabindex="-1" text="Tile Display Name" display-tooltip-when-elided="true" name="DisplayName" />
+            <ui:Label tabindex="-1" text="(TileType - EntityBaseType)" display-tooltip-when-elided="true" name="TileType" style="font-size: 8px; margin-left: 4px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

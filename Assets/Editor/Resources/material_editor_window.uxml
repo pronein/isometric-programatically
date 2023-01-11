@@ -1,0 +1,46 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 800px; height: 640px;">
+        <ui:VisualElement name="MaterialList" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 200px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;">
+            <ui:VisualElement name="Header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
+                <ui:Label tabindex="-1" text="Materials" display-tooltip-when-elided="true" style="font-size: 24px; -unity-font-style: bold;" />
+                <ui:Button text="+" display-tooltip-when-elided="true" name="Btn_AddMaterial" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 0; border-right-width: 1px; border-top-width: 0; border-bottom-width: 0; margin-top: 4px; margin-bottom: 4px;" />
+        <ui:VisualElement name="MaterialDetail" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; visibility: visible;">
+            <ui:VisualElement name="Header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
+                <ui:Label tabindex="-1" text="Details" display-tooltip-when-elided="true" style="font-size: 24px; -unity-font-style: bold;" />
+                <ui:Button text="Delete" display-tooltip-when-elided="true" name="Btn_DeleteMaterial" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                <ui:VisualElement name="Row" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
+                    <ui:VisualElement name="Icon" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); margin-left: 16px; margin-right: 16px; margin-top: 16px; margin-bottom: 16px; width: 64px; justify-content: flex-start; align-self: center; align-items: center; height: 64px; background-image: url(&apos;project://database/Assets/Sprites/UnknownIcon.png?fileID=2800000&amp;guid=55fb17fb52faa3d44aedec2e3422983a&amp;type=3#UnknownIcon&apos;);" />
+                    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; flex-shrink: 0;">
+                        <ui:VisualElement name="Header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0.25);">
+                            <ui:Label tabindex="-1" text="General" display-tooltip-when-elided="true" style="background-color: rgba(0, 0, 0, 0.25); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-font-style: bold; font-size: 14px; padding-left: 4px; padding-right: 0; padding-top: 2px; padding-bottom: 2px;" />
+                        </ui:VisualElement>
+                        <ui:TextField picking-mode="Ignore" label="ID" value="xxxx-xxx-xx-xxx-xxxx" readonly="true" focusable="false" binding-path="m_Id" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
+                        <ui:TextField picking-mode="Ignore" label="Name" value="&lt;material name&gt;" binding-path="m_DisplayName" name="DisplayName" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
+                        <ui:EnumField label="Type" type="Material+Types, Assembly-CSharp" binding-path="m_Type" />
+                        <uie:ObjectField name="IconPicker" label="Icon" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="m_Icon" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Row" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; flex-shrink: 0;">
+                        <ui:VisualElement name="Header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0.25);">
+                            <ui:Label tabindex="-1" text="Description" display-tooltip-when-elided="true" style="background-color: rgba(0, 0, 0, 0.25); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-font-style: bold; font-size: 14px; padding-left: 4px; padding-right: 0; padding-top: 2px; padding-bottom: 2px;" />
+                        </ui:VisualElement>
+                        <ui:TextField picking-mode="Ignore" value="&lt;material description&gt;" multiline="true" binding-path="m_Description" style="flex-grow: 1; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Row" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; flex-shrink: 0;">
+                        <ui:VisualElement name="Header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0.25);">
+                            <ui:Label tabindex="-1" text="Other" display-tooltip-when-elided="true" style="background-color: rgba(0, 0, 0, 0.25); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-font-style: bold; font-size: 14px; padding-left: 4px; padding-right: 0; padding-top: 2px; padding-bottom: 2px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

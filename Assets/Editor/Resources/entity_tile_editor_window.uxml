@@ -1,0 +1,75 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/Resources/tile_editor_window.uss?fileID=7433441132597879392&amp;guid=d891afc7066eedc44889d5804cbf53d1&amp;type=3#tile_editor_window" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+        <ui:VisualElement name="TilesContainer" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); max-width: 300px; min-width: 300px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;">
+            <ui:VisualElement name="Header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
+                <ui:Label tabindex="-1" text="Tiles" display-tooltip-when-elided="true" style="font-size: 24px; -unity-font-style: bold;" />
+                <ui:Button text="+" display-tooltip-when-elided="true" name="Btn_Add" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-right-width: 1px;" />
+        <ui:VisualElement name="TileDetailsContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;">
+            <ui:VisualElement name="Header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
+                <ui:Label tabindex="-1" text="Details" display-tooltip-when-elided="true" style="font-size: 24px; -unity-font-style: bold;" />
+                <ui:Button text="Delete" display-tooltip-when-elided="true" name="Btn_Delete" />
+            </ui:VisualElement>
+            <ui:VisualElement name="GeneralSection" class="section">
+                <ui:VisualElement name="Header" class="header">
+                    <ui:Label tabindex="-1" text="General" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Content" class="content">
+                    <ui:TextField picking-mode="Ignore" label="ID" value="xxxx-xx-xxx-xx-xxxx" readonly="true" name="Id" />
+                    <ui:TextField picking-mode="Ignore" label="Display Name" value="Tile Name" name="Name" />
+                    <ui:EnumField label="TIle Type" type="EntityTileType, Assembly-CSharp" name="TileType" />
+                    <ui:EnumField label="Entity Type" type="EntityBaseType, Assembly-CSharp" name="EntityType" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="SpriteSection" class="section">
+                <ui:VisualElement name="Header" class="header">
+                    <ui:Label tabindex="-1" text="Sprites" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Content" class="content">
+                    <ui:VisualElement name="Tile" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement name="Icon" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); max-width: 36px; max-height: 36px; min-width: 36px; min-height: 36px; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px;" />
+                        <ui:VisualElement name="Content" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                            <uie:ObjectField label="Sprite" type="UnityEngine.Sprite, UnityEngine.CoreModule" name="Sprite" />
+                            <uie:ColorField label="Color" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="Color" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EntityTile" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="ConnectedTile" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="CompositionSection" class="section">
+                <ui:VisualElement name="Header" class="header">
+                    <ui:Label tabindex="-1" text="Composition" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="MaterialsContent" class="content">
+                    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement style="flex-grow: 1; flex-basis: 50%;">
+                            <ui:Label tabindex="-1" text="Selected Materials" display-tooltip-when-elided="true" />
+                            <ui:ListView focusable="true" show-foldout-header="false" show-add-remove-footer="false" name="SelectedMaterials" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-basis: 50%;">
+                            <ui:Label tabindex="-1" text="Available Materials" display-tooltip-when-elided="true" />
+                            <ui:ListView focusable="true" name="AvailableMaterials" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: row;">
+                        <ui:VisualElement style="flex-grow: 1; flex-basis: 50%;">
+                            <ui:Button text="-" display-tooltip-when-elided="true" name="Btn_RemoveMaterial" style="align-self: flex-end;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; flex-basis: 50%;">
+                            <ui:Button text="+" display-tooltip-when-elided="true" name="Btn_AddMaterial" style="align-self: flex-end;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="MaterialsContent" class="content" style="flex-direction: row;">
+                    <ui:VisualElement name="Components" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                        <ui:ListView focusable="true" name="ComponentsListView" show-foldout-header="true" header-title="Components" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

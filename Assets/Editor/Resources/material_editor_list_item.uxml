@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="ItemRow" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; justify-content: center; height: 35px; flex-shrink: 0;">
+        <ui:VisualElement name="Row" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: center; flex-shrink: 0;">
+            <ui:VisualElement name="Icon" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 25px; height: 25px; background-image: url(&apos;project://database/Assets/Sprites/UnknownIcon.png?fileID=2800000&amp;guid=55fb17fb52faa3d44aedec2e3422983a&amp;type=3#UnknownIcon&apos;);" />
+            <ui:Label name="Name" tabindex="-1" text="Unknown" display-tooltip-when-elided="true" style="flex-grow: 1; padding-left: 4px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

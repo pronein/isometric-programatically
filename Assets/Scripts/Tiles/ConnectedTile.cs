@@ -32,11 +32,14 @@ enum SpriteIndex
     Single = 11
 }
 
-public class EntityTile : Tile
+public class ConnectedTile : EntityTile
 {
     public Sprite[] m_Sprites;
-    public Sprite m_Preview;
-    public Dictionary<EntityComponent,float> m_Components;
+
+    public ConnectedTile()
+    {
+        flags = TileFlags.None;
+    }
 
     public override void RefreshTile(Vector3Int location, ITilemap tilemap)
     {
@@ -45,7 +48,7 @@ public class EntityTile : Tile
             for (var xd = -1; xd <= 1; xd++)
             {
                 Vector3Int position = new Vector3Int(location.x + xd, location.y + yd, location.z);
-                if (HasEntityTile(tilemap, position))
+                if (HasConnectedTile(tilemap, position))
                     tilemap.RefreshTile(position);
             }
         }
@@ -54,19 +57,20 @@ public class EntityTile : Tile
     public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
     {
         // North
-        int mask = HasEntityTile(tilemap, location + new Vector3Int(0, 1, 0)) ? (int)ConnectedDirection.North : 0;
+        int mask = HasConnectedTile(tilemap, location + new Vector3Int(0, 1, 0)) ? (int)ConnectedDirection.North : 0;
         // East
-        mask += HasEntityTile(tilemap, location + new Vector3Int(1, 0, 0)) ? (int)ConnectedDirection.East : 0;
+        mask += HasConnectedTile(tilemap, location + new Vector3Int(1, 0, 0)) ? (int)ConnectedDirection.East : 0;
         // South
-        mask += HasEntityTile(tilemap, location + new Vector3Int(0, -1, 0)) ? (int)ConnectedDirection.South : 0;
+        mask += HasConnectedTile(tilemap, location + new Vector3Int(0, -1, 0)) ? (int)ConnectedDirection.South : 0;
         // West
-        mask += HasEntityTile(tilemap, location + new Vector3Int(-1, 0, 0)) ? (int)ConnectedDirection.West : 0;
+        mask += HasConnectedTile(tilemap, location + new Vector3Int(-1, 0, 0)) ? (int)ConnectedDirection.West : 0;
 
         var index = GetIndex((byte)mask);
 
         if (index >= 0 && index < m_Sprites.Length)
         {
             tileData.sprite = m_Sprites[index];
+            sprite = tileData.sprite;
             tileData.color = Color.white;
 
             //var m = tileData.transform;
@@ -78,11 +82,11 @@ public class EntityTile : Tile
         }
         else
         {
-            Debug.LogWarning("Not enough sprites in EntityTile instance");
+            Debug.LogWarning("Not enough sprites in ConnectedTile instance");
         }
     }
 
-    private bool HasEntityTile(ITilemap tilemap, Vector3Int location)
+    private bool HasConnectedTile(ITilemap tilemap, Vector3Int location)
     {
         return tilemap.GetTile(location) == this;
     }
@@ -134,14 +138,14 @@ public class EntityTile : Tile
     }
 
 #if UNITY_EDITOR
-    [MenuItem("Assets/Create/EntityTile")]
-    public static void CreateEntityTile()
+    [MenuItem("Assets/Create/Tiles/Connected Tile")]
+    public static void CreateTile()
     {
-        string path = EditorUtility.SaveFilePanelInProject("Save Entity Tile", "New Entity Tile", "Asset", "Save Entity Tile", "Assets");
+        string path = EditorUtility.SaveFilePanelInProject("Save Connected Tile", "New Connected Tile", "Asset", "Save Connected Tile", "Assets");
         if (string.IsNullOrEmpty(path))
             return;
 
-        AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<EntityTile>(), path);
+        AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<ConnectedTile>(), path);
     }
 #endif
 }

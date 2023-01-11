@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:GroupBox name="EntityBaseGroup" binding-path="m_CurrentEntityMetadata" text="Base">
+            <ui:TextField picking-mode="Ignore" label="Name" binding-path="m_Name" />
+            <ui:Toggle label="Can Pass Through" binding-path="m_CanPassThrough" name="PassThroughToggle" />
+            <ui:Slider picking-mode="Ignore" label="Pass Through Speed" value="1" high-value="10" show-input-field="true" name="PassThroughSpeedSlider" binding-path="m_PassThroughSpeed" />
+            <ui:Slider picking-mode="Ignore" label="Walk Over Speed" value="1" high-value="10" name="WalkOverSpeedSlider" show-input-field="true" binding-path="m_WalkOverSpeed" />
+            <ui:ListView focusable="true" show-add-remove-footer="true" show-foldout-header="true" show-alternating-row-backgrounds="None" selection-type="None" show-border="true" virtualization-method="DynamicHeight" header-title="Materials" name="MaterialsListView" />
+        </ui:GroupBox>
+        <ui:Foldout text="Structure" name="StructureFoldout" style="display: none;" />
+        <ui:Foldout text="Product" name="ProductFoldout" style="display: none;" />
+        <ui:Foldout text="Matter" name="MatterFoldout" binding-path="m_CurrentEntityMetadata" focusable="false" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

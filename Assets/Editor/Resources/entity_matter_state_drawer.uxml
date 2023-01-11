@@ -1,0 +1,13 @@
+﻿<ui:UXML xmlns:ui="UnityEngine.UIElements"
+		 xmlns:uie="UnityEditor.UIElements"
+		 xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 engine="UnityEngine.UIElements"
+		 editor="UnityEditor.UIElements"
+		 editor-extension-mode="True">
+	<ui:VisualElement>
+		<ui:Label />
+		<ui:VisualElement style="flex-direction: row;">
+			<uie:EnumField binding-path="MatterState" />
+		</ui:VisualElement>
+	</ui:VisualElement>
+</ui:UXML>

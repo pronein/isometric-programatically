@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:ListView focusable="true" virtualization-method="DynamicHeight" reorder-mode="Animated" binding-path="m_TilemapData" show-add-remove-footer="false" show-border="true" show-foldout-header="true" header-title="Tilemap Data" name="ListView" show-bound-collection-size="false" reorderable="false" selection-type="None" />
+</ui:UXML>

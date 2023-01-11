@@ -1,0 +1,8 @@
+.tile-list {
+    height: 200px;
+    flex-grow: 0;
+}
+
+.box-items {
+    flex-grow: 1;
+}
